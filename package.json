@@ -1,0 +1,10 @@
+{
+  "name": "upload-to-s3",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "aws-sdk": "^2.85.0",
+    "bluebird": "^3.5.0",
+    "walk": "^2.3.9"
+  }
+}
