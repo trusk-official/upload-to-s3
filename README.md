@@ -4,6 +4,10 @@ Upload web content (html, jpeg, png, json, otf...) to S3
 
 Make sure you have the rights on the bucket
 
+## Docker build
+
+    docker run -t uploadtos3 build .
+
 ## Usage
 ```sh
 docker run \
