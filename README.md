@@ -6,7 +6,7 @@ Make sure you have the rights on the bucket
 
 ## Docker build
 
-    docker run -t uploadtos3 build .
+    docker build -t uploadtos3 .
 
 ## Usage
 ```sh
