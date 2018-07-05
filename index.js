@@ -44,7 +44,7 @@ const uploadFile = awsconf => {
       gif: "image/gif",
       json: "application/json",
       otf: "font/opentype",
-      svg: "c"
+      svg: "image/svg+xml"
     };
     return preadFile(path).then(output => {
       return s3pputObject({
