@@ -43,7 +43,8 @@ const uploadFile = awsconf => {
       js: 'application/javascript',
       gif: 'image/gif',
       json: 'application/json',
-      otf: 'font/opentype'
+      otf: 'font/opentype',
+      svg: 'image/svg+xml'
     };
     return preadFile(path)
     .then(output => {
