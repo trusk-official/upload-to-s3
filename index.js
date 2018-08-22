@@ -47,13 +47,18 @@ const uploadFile = awsconf => {
       svg: "image/svg+xml"
     };
     return preadFile(path).then(output => {
-      return s3pputObject({
-        Bucket: bucket,
-        Key: `${folder}${name}`,
-        Body: new Buffer(output, "binary"),
-        ContentType: contenttypes[path.split(".")[path.split(".").length - 1]],
-        ACL: acl
-      });
+      const params = Object.assign(
+        {
+          Bucket: bucket,
+          Key: `${folder}${name}`,
+          Body: new Buffer(output, "binary"),
+          ContentType:
+            contenttypes[path.split(".")[path.split(".").length - 1]],
+          ACL: acl
+        },
+        !!name.match(/.+\.html$/) ? { CacheControl: "no-cache" } : {}
+      );
+      return s3pputObject(params);
     });
   };
 };
